@@ -10,7 +10,7 @@ namespace Commercial_Controller
         public string status;
         public int amountOfFLoors;
         public int amountOfElevators;
-
+        public List<int> servedFloorsList = new List<int>();
 
 
 
@@ -18,6 +18,7 @@ namespace Commercial_Controller
         {
 
             ID = _ID;
+            servedFloorsList = _servedFloors;
           /*  status = "active";
             amountOfElevators = _amountOfElevators;
             Elevator[] columnsList = { };*/
