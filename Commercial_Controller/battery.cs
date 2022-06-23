@@ -50,7 +50,6 @@ namespace Commercial_Controller
             Column column = new Column(columnID.ToString(), _amountOfBasements, _amountOfElevatorPerColumn, servedFloors, true);
             columnsList.Add(column);
             columnID++;
-            
         }
 
         private void CreateColumns(int _amountOfColumns, int _amountOfFloors, int _amountOfElevatorPerColumn)
@@ -58,34 +57,27 @@ namespace Commercial_Controller
             double moean = _amountOfFloors / _amountOfColumns;
             double amountOfFloorsPerColumn = Math.Ceiling(moean);
             floor = 1;
-            int floorAssigned = 1;
+            
 
             for (int i = 0; i < _amountOfColumns; i++)
             {
                 List<int> servedFloors = new List<int>();
                 servedFloors.Add(1);
-                for (int j = 0; j < _amountOfFloors; j++)
+                for (int j = 0; j < amountOfFloorsPerColumn; j++)
                 {
 
-                    if (floor <= amountOfFloorsPerColumn)
+                    if (floor <= _amountOfFloors)
                     {
 
-                        servedFloors.Add(floorAssigned);
+                        servedFloors.Add(floor);
                         floor++;
 
                     }
-                    else
-                    {
-                        break;
-                    }
-                    floorAssigned++;
+                
                 }
                 Column column = new Column(columnID.ToString(), _amountOfFloors, _amountOfElevatorPerColumn, servedFloors, false);
                 columnsList.Add(column);
                 columnID++;
-                floor = 1;
-
-
             }
         }
 
