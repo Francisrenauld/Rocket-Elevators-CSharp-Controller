@@ -1,4 +1,4 @@
-/*using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Commercial_Controller.Tests
 {
@@ -13,7 +13,7 @@ namespace Commercial_Controller.Tests
             }
         }
 
-        [TestMethod]
+       [TestMethod]
 
         public void TestScenario1()
         {
@@ -30,7 +30,7 @@ namespace Commercial_Controller.Tests
 
             Assert.AreEqual(chosenColumn.ID, expectedColumn.ID, "Wrong column selected, expected Column " + expectedColumn.ID + ", got Column " + chosenColumn.ID);
 
-            Assert.AreEqual(chosenElevator.ID, expectedElevator.ID, "Wrong elevator selected, expected Elevator " + expectedElevator.ID + ", got Elevator " + expectedElevator.ID);
+            Assert.AreEqual(chosenElevator.ID, expectedElevator.ID, "Wrong elevator selected, expected Elevator " + expectedElevator.ID + ", got Elevator " + chosenElevator.ID);
 
             Assert.IsTrue(chosenElevator.completedRequestsList.Contains(userPosition), "No elevator was sent to pick up the user");
 
@@ -39,7 +39,7 @@ namespace Commercial_Controller.Tests
             AssertElevatorsPosition(chosenColumn, expectedFinalPositions);
         }
 
-        [TestMethod]
+       [TestMethod]
         public void TestScenario2()
         {
             Battery battery = new Battery(1, 4, 60, 6, 5);
@@ -56,7 +56,7 @@ namespace Commercial_Controller.Tests
             Assert.AreEqual(chosenColumn.ID, expectedColumn.ID, "Wrong column selected, expected Column " + expectedColumn.ID + ", got Column " + chosenColumn.ID);
 
             Assert.AreEqual(chosenElevator.ID, expectedElevator.ID, "Wrong elevator selected, expected Elevator " + expectedElevator.ID + ", got Elevator " + chosenElevator.ID);
-
+             
             Assert.IsTrue(chosenElevator.completedRequestsList.Contains(userPosition), "No elevator was sent to pick up the user");
 
             Assert.IsTrue(chosenElevator.completedRequestsList.Contains(userPosition) && chosenElevator.currentFloor == destination, "The user didn't reach its destination");
@@ -64,7 +64,7 @@ namespace Commercial_Controller.Tests
             AssertElevatorsPosition(chosenColumn, expectedFinalPositions);
         }
 
-        [TestMethod]
+       [TestMethod]
         public void TestScenario3()
         {
             Battery battery = new Battery(1, 4, 60, 6, 5);
@@ -108,4 +108,4 @@ namespace Commercial_Controller.Tests
             AssertElevatorsPosition(columnUsed, expectedFinalPositions);
         }
     }
-}*/
+}
