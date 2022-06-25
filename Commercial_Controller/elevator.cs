@@ -90,7 +90,7 @@ namespace Commercial_Controller
         {
             //stop the code for 5 sec
 
-            Thread.Sleep(800);
+           Thread.Sleep(800);
 
         }
 

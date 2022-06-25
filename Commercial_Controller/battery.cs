@@ -33,7 +33,6 @@ namespace Commercial_Controller
 
         }
 
-
         public void CreateBasementColumn(int _amountOfBasements, int _amountOfElevatorPerColumn)
         {
             List<int> servedFloors = new List<int>();
@@ -58,7 +57,6 @@ namespace Commercial_Controller
             double amountOfFloorsPerColumn = Math.Ceiling(moean);
             floor = 1;
             
-
             for (int i = 0; i < _amountOfColumns; i++)
             {
                 List<int> servedFloors = new List<int>();
@@ -73,7 +71,6 @@ namespace Commercial_Controller
                         floor++;
 
                     }
-                
                 }
                 Column column = new Column(columnID.ToString(), _amountOfFloors, _amountOfElevatorPerColumn, servedFloors, false);
                 columnsList.Add(column);
@@ -84,18 +81,18 @@ namespace Commercial_Controller
         private void CreateFloorRequestButtons(int _amountOfFloors)
         {
 
-            //int buttonFloor = 1;
+            int buttonFloor = 1;
             int floorRequestButtonID = 0;
 
             for (int i = 0; i < _amountOfFloors; i++)
             {
+
                 floorRequestButtonID = i + 1;
 
-                FloorRequestButton floorRequestButton = new FloorRequestButton(floorRequestButtonID, floorRequestButtonID, "up");
+                FloorRequestButton floorRequestButton = new FloorRequestButton(floorRequestButtonID, buttonFloor, "up");
                 floorButtonsList.Add(floorRequestButton);
 
-                //buttonFloor++;
-
+                buttonFloor++;
             }
 
         }
@@ -146,7 +143,6 @@ namespace Commercial_Controller
             Elevator elevator = column.findElevator(1, _direction);
             elevator.addNewRequest(1);
             elevator.move();
-
             elevator.addNewRequest(_requestedFloor);
             elevator.move();
 
